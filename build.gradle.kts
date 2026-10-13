@@ -13,6 +13,9 @@ dependencies {
     testImplementation(kotlin("test"))
 }
 
+dependencies {
+    implementation("com.github.doyaaaaaken:kotlin-csv-jvm:1.9.1")
+}
 tasks.test {
     useJUnitPlatform()
 }

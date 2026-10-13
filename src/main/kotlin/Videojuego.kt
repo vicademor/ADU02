@@ -1,0 +1,12 @@
+data class Videojuego(
+    val id: Int,
+    val titulo: String,
+    val genero: String,
+    val anio: Int,
+    var nota: Double
+) {
+    override fun toString(): String{
+        return "[$id] $titulo - [$genero] | ($anio) | [$nota]"
+    }
+}
+
