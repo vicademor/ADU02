@@ -47,11 +47,12 @@ fun mostrarRutas(datos: Path){
 }
 fun menuPrincipal(){
     var opcion: Int = 0
-    while(opcion != 1) {
+    while(true) {
         println(
             """
         ===== CATÁLOGO DE VIDEOJUEGOS =====
         1. Gestión CSV
+        2. Leer catálogo desde XML
         0. Salir
         ====================================
         Elige una opción:
@@ -60,7 +61,8 @@ fun menuPrincipal(){
         opcion = readln().toInt()
         when (opcion) {
             1 -> menuCsv()
-            2 -> exitProcess(0)
+            2 -> menuXML()
+            0 -> exitProcess(0)
             else -> println("Opción incorrecta")
         }
     }
@@ -92,6 +94,11 @@ fun menuCsv(){
         }
     }
 }
+
+fun menuXML(){
+    gestionXML()
+}
+
 fun crearVideojuego(control: VideojuegoService): Videojuego {
     println("--- Creando videojuego ---")
     println("Introduce un título: ")

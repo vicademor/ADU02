@@ -1,0 +1,37 @@
+<videojuegos>
+  <videojuego>
+    <id>8</id>
+    <titulo>GTA V</titulo>
+    <genero>Acción</genero>
+    <anio>2013</anio>
+    <nota>10.0</nota>
+  </videojuego>
+  <videojuego>
+    <id>9</id>
+    <titulo>Minecraft</titulo>
+    <genero>Aventura</genero>
+    <anio>2008</anio>
+    <nota>8.5</nota>
+  </videojuego>
+  <videojuego>
+    <id>10</id>
+    <titulo>Call Of Duty Black Ops 2</titulo>
+    <genero>Acción</genero>
+    <anio>2011</anio>
+    <nota>9.1</nota>
+  </videojuego>
+  <videojuego>
+    <id>11</id>
+    <titulo>GTA IV</titulo>
+    <genero>Acción</genero>
+    <anio>2009</anio>
+    <nota>8.75</nota>
+  </videojuego>
+  <videojuego>
+    <id>12</id>
+    <titulo>Pokemon Amarillo</titulo>
+    <genero>Aventura</genero>
+    <anio>1999</anio>
+    <nota>9.4</nota>
+  </videojuego>
+</videojuegos>

@@ -9,6 +9,7 @@ class VideojuegoService {
         return this.videojuegos
     }
     fun escribirDatos(videojuegos: MutableList<Videojuego>){
+        videojuegos.sortBy { it.id }
         control.escribirCSV(ruta, videojuegos)
     }
 
