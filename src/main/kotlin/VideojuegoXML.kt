@@ -68,6 +68,18 @@ fun xmlToCsv(videojuegosXML: List<VideojuegoXML>): List<Videojuego> {
     }
 }
 
+fun csvToXML(videojuegos: List<Videojuego>): List<VideojuegoXML>{
+    return videojuegos.map{
+        VideojuegoXML(
+            id = it.id,
+            titulo = it.titulo,
+            genero = it.genero,
+            anio = it.anio,
+            nota = it.nota
+        )
+    }
+}
+
 fun leerDatosXML(ruta: Path) : List<VideojuegoXML>{
     var contenedor = VideojuegosWrapper(emptyList())
 

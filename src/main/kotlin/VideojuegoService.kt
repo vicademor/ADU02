@@ -72,4 +72,16 @@ class VideojuegoService {
     fun obtenerUltimaId(): Int{
         return videojuegos.last().id + 1
     }
+
+    fun actualizarXML(){
+        var datos = csvToXML(this.videojuegos)
+        var ruta = Path.of("datos/datos_ini", "videojuegos.xml")
+        escribirDatosXML(ruta, datos)
+    }
+
+    fun actualizarJSON(){
+        var datos = csvToJson(this.videojuegos)
+        var ruta = Path.of("datos/datos_ini", "videojuegos.json")
+        escribirDatosJSON(ruta, datos)
+    }
 }

@@ -53,6 +53,7 @@ fun menuPrincipal(){
         ===== CATÁLOGO DE VIDEOJUEGOS =====
         1. Gestión CSV
         2. Leer catálogo desde XML
+        3. Leer catálogo desde JSON
         0. Salir
         ====================================
         Elige una opción:
@@ -62,6 +63,7 @@ fun menuPrincipal(){
         when (opcion) {
             1 -> menuCsv()
             2 -> menuXML()
+            3 -> menuJSON()
             0 -> exitProcess(0)
             else -> println("Opción incorrecta")
         }
@@ -89,7 +91,7 @@ fun menuCsv(){
             3 -> control.anyadirJuego(crearVideojuego(control))
             4 -> modificarVideojuego(control)
             5 -> eliminarVideojuego(control)
-            0 -> menuPrincipal()
+            0 -> volverMenuPrincipal(control)
             else -> println("Entrada inválida")
         }
     }
@@ -97,6 +99,14 @@ fun menuCsv(){
 
 fun menuXML(){
     gestionXML()
+}
+fun menuJSON(){
+    gestionJSON()
+}
+fun volverMenuPrincipal(control: VideojuegoService){
+    control.actualizarXML()
+    control.actualizarJSON()
+    menuPrincipal()
 }
 
 fun crearVideojuego(control: VideojuegoService): Videojuego {
