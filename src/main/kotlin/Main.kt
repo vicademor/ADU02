@@ -54,6 +54,7 @@ fun menuPrincipal(){
         1. Gestión CSV
         2. Leer catálogo desde XML
         3. Leer catálogo desde JSON
+        4. Conversiones entre formatos
         0. Salir
         ====================================
         Elige una opción:
@@ -64,6 +65,7 @@ fun menuPrincipal(){
             1 -> menuCsv()
             2 -> menuXML()
             3 -> menuJSON()
+            4 -> menuConversion()
             0 -> exitProcess(0)
             else -> println("Opción incorrecta")
         }
@@ -94,6 +96,30 @@ fun menuCsv(){
             0 -> volverMenuPrincipal(control)
             else -> println("Entrada inválida")
         }
+    }
+}
+
+fun menuConversion(){
+    val control = VideojuegoService()
+    println("""
+        --- Conversiones ---
+        1. CSV  → JSON
+        2. CSV  → XML
+        3. JSON → CSV
+        4. JSON → XML
+        5. XML  → CSV
+        6. XML  → JSON
+        0. Volver
+    """.trimIndent())
+    var opcion = readln().toInt()
+    when(opcion) {
+        1 -> control.escribirDatosJSONFin(csvToJson(control.recibirDatos()))
+        2 -> control.escribirDatosXMLFin(csvToXML(control.recibirDatos()))
+        3 -> control.escribirDatosCSVFin(jsonToCsv(recibirDatosJSON()) as MutableList<Videojuego>)
+        4 -> control.escribirDatosXMLFin(control.jsonToXML(recibirDatosJSON()))
+        5 -> control.escribirDatosCSVFin(xmlToCsv(recibirDatosXML()) as MutableList<Videojuego>)
+        6 -> control.escribirDatosJSONFin(control.xmlToJSON(recibirDatosXML()))
+        0 -> menuPrincipal()
     }
 }
 

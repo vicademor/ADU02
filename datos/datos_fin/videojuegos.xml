@@ -1,0 +1,107 @@
+<videojuegos>
+  <videojuego>
+    <id>1</id>
+    <titulo>The Legend of Zelda: Breath of the Wild</titulo>
+    <genero>Aventura</genero>
+    <anio>2017</anio>
+    <nota>9.5</nota>
+  </videojuego>
+  <videojuego>
+    <id>2</id>
+    <titulo>Red Dead Redemption 2</titulo>
+    <genero>Acción</genero>
+    <anio>2018</anio>
+    <nota>9.7</nota>
+  </videojuego>
+  <videojuego>
+    <id>3</id>
+    <titulo>Hades</titulo>
+    <genero>Roguelike</genero>
+    <anio>2020</anio>
+    <nota>9.3</nota>
+  </videojuego>
+  <videojuego>
+    <id>4</id>
+    <titulo>Hollow Knight</titulo>
+    <genero>Plataformas</genero>
+    <anio>2017</anio>
+    <nota>9.1</nota>
+  </videojuego>
+  <videojuego>
+    <id>5</id>
+    <titulo>Celeste</titulo>
+    <genero>Plataformas</genero>
+    <anio>2018</anio>
+    <nota>8.9</nota>
+  </videojuego>
+  <videojuego>
+    <id>6</id>
+    <titulo>Assasins Creed II</titulo>
+    <genero>Accion</genero>
+    <anio>2005</anio>
+    <nota>9.75</nota>
+  </videojuego>
+  <videojuego>
+    <id>7</id>
+    <titulo>Los Simpsons Hit n Run</titulo>
+    <genero>Sandbox</genero>
+    <anio>2006</anio>
+    <nota>9.2</nota>
+  </videojuego>
+  <videojuego>
+    <id>8</id>
+    <titulo>GTA V</titulo>
+    <genero>Acción</genero>
+    <anio>2013</anio>
+    <nota>10.0</nota>
+  </videojuego>
+  <videojuego>
+    <id>9</id>
+    <titulo>Minecraft</titulo>
+    <genero>Aventura</genero>
+    <anio>2008</anio>
+    <nota>8.5</nota>
+  </videojuego>
+  <videojuego>
+    <id>10</id>
+    <titulo>Call Of Duty Black Ops 2</titulo>
+    <genero>Acción</genero>
+    <anio>2011</anio>
+    <nota>9.1</nota>
+  </videojuego>
+  <videojuego>
+    <id>11</id>
+    <titulo>GTA IV</titulo>
+    <genero>Acción</genero>
+    <anio>2009</anio>
+    <nota>8.75</nota>
+  </videojuego>
+  <videojuego>
+    <id>12</id>
+    <titulo>Pokemon Amarillo</titulo>
+    <genero>Aventura</genero>
+    <anio>1999</anio>
+    <nota>9.4</nota>
+  </videojuego>
+  <videojuego>
+    <id>13</id>
+    <titulo>Pokemon Rojo Fuego</titulo>
+    <genero>Aventura</genero>
+    <anio>1997</anio>
+    <nota>9.6</nota>
+  </videojuego>
+  <videojuego>
+    <id>14</id>
+    <titulo>Pokemon Azul</titulo>
+    <genero>Aventura</genero>
+    <anio>1997</anio>
+    <nota>9.5</nota>
+  </videojuego>
+  <videojuego>
+    <id>15</id>
+    <titulo>Pokemon Verde Hoja</titulo>
+    <genero>Aventura</genero>
+    <anio>1997</anio>
+    <nota>9.1</nota>
+  </videojuego>
+</videojuegos>

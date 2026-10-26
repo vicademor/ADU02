@@ -1,0 +1,107 @@
+[
+    {
+        "id": 1,
+        "titulo": "The Legend of Zelda: Breath of the Wild",
+        "genero": "Aventura",
+        "anio": 2017,
+        "nota": 9.5
+    },
+    {
+        "id": 2,
+        "titulo": "Red Dead Redemption 2",
+        "genero": "Acción",
+        "anio": 2018,
+        "nota": 9.7
+    },
+    {
+        "id": 3,
+        "titulo": "Hades",
+        "genero": "Roguelike",
+        "anio": 2020,
+        "nota": 9.3
+    },
+    {
+        "id": 4,
+        "titulo": "Hollow Knight",
+        "genero": "Plataformas",
+        "anio": 2017,
+        "nota": 9.1
+    },
+    {
+        "id": 5,
+        "titulo": "Celeste",
+        "genero": "Plataformas",
+        "anio": 2018,
+        "nota": 8.9
+    },
+    {
+        "id": 6,
+        "titulo": "Assasins Creed II",
+        "genero": "Accion",
+        "anio": 2005,
+        "nota": 9.75
+    },
+    {
+        "id": 7,
+        "titulo": "Los Simpsons Hit n Run",
+        "genero": "Sandbox",
+        "anio": 2006,
+        "nota": 9.2
+    },
+    {
+        "id": 8,
+        "titulo": "GTA V",
+        "genero": "Acción",
+        "anio": 2013,
+        "nota": 10.0
+    },
+    {
+        "id": 9,
+        "titulo": "Minecraft",
+        "genero": "Aventura",
+        "anio": 2008,
+        "nota": 8.5
+    },
+    {
+        "id": 10,
+        "titulo": "Call Of Duty Black Ops 2",
+        "genero": "Acción",
+        "anio": 2011,
+        "nota": 9.1
+    },
+    {
+        "id": 11,
+        "titulo": "GTA IV",
+        "genero": "Acción",
+        "anio": 2009,
+        "nota": 8.75
+    },
+    {
+        "id": 12,
+        "titulo": "Pokemon Amarillo",
+        "genero": "Aventura",
+        "anio": 1999,
+        "nota": 9.4
+    },
+    {
+        "id": 13,
+        "titulo": "Pokemon Rojo Fuego",
+        "genero": "Aventura",
+        "anio": 1997,
+        "nota": 9.6
+    },
+    {
+        "id": 14,
+        "titulo": "Pokemon Azul",
+        "genero": "Aventura",
+        "anio": 1997,
+        "nota": 9.5
+    },
+    {
+        "id": 15,
+        "titulo": "Pokemon Verde Hoja",
+        "genero": "Aventura",
+        "anio": 1997,
+        "nota": 9.1
+    }
+]

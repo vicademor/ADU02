@@ -2,6 +2,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
+import java.awt.SystemColor.control
 import java.nio.file.Files
 import java.nio.file.Path
 
@@ -39,6 +40,12 @@ fun gestionJSON() {
     }
     control.escribirDatos(datoscsv)
     println("--- $contador juegos añadidos ---")
+}
+
+fun recibirDatosJSON(): List<VideojuegoJSON> {
+    val entradaJSON = Path.of("datos/datos_ini", "videojuegos.json")
+    val datos = leerDatosJSON(entradaJSON)
+    return datos
 }
 
 fun jsonToCsv(videojuegos: List<VideojuegoJSON>): List<Videojuego> {

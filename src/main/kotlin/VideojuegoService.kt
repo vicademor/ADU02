@@ -84,4 +84,44 @@ class VideojuegoService {
         var ruta = Path.of("datos/datos_ini", "videojuegos.json")
         escribirDatosJSON(ruta, datos)
     }
+
+
+    fun xmlToJSON(datos: List<VideojuegoXML>): List<VideojuegoJSON> {
+        return datos.map{
+            VideojuegoJSON(
+                id = it.id,
+                titulo = it.titulo,
+                genero = it.genero,
+                anio = it.anio,
+                nota = it.nota
+            )
+        }
+    }
+
+    fun jsonToXML(datos: List<VideojuegoJSON>): List<VideojuegoXML> {
+        return datos.map{
+            VideojuegoXML(
+                id = it.id,
+                titulo = it.titulo,
+                genero = it.genero,
+                anio = it.anio,
+                nota = it.nota
+            )
+        }
+    }
+
+    fun escribirDatosCSVFin(datos: MutableList<Videojuego>){
+        val ruta = Path.of("datos/datos_fin", "videojuegos.csv")
+        VideojuegoRepository().escribirCSV(ruta, datos)
+    }
+
+    fun escribirDatosXMLFin(datos: List<VideojuegoXML>){
+        val ruta = Path.of("datos/datos_fin", "videojuegos.xml")
+        escribirDatosXML(ruta, datos)
+    }
+
+    fun escribirDatosJSONFin(datos: List<VideojuegoJSON>){
+        val ruta = Path.of("datos/datos_fin", "videojuegos.json")
+        escribirDatosJSON(ruta, datos)
+    }
 }

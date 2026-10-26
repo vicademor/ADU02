@@ -56,6 +56,12 @@ fun gestionXML(){
     println("--- $contador juegos añadidos ---")
 }
 
+fun recibirDatosXML(): List<VideojuegoXML> {
+    val entradaXML = Path.of("datos/datos_ini", "videojuegos.xml")
+    val datos = leerDatosXML(entradaXML)
+    return datos
+}
+
 fun xmlToCsv(videojuegosXML: List<VideojuegoXML>): List<Videojuego> {
     return videojuegosXML.map {
         Videojuego(
