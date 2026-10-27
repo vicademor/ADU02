@@ -8,7 +8,7 @@ class VideojuegoRepository {
     fun leerDatosCsv(ruta: Path): List<Videojuego> {
         var videojuegos: List<Videojuego> = emptyList()
 
-        if (!Files.isReadable(ruta)) {
+        if (!Files.exists(ruta)) {
             println("Error: No se puede leer el fichero en la ruta: $ruta")
         } else {
             val reader = csvReader {
@@ -41,6 +41,10 @@ class VideojuegoRepository {
 
     fun escribirCSV(ruta: Path, videojuegos: MutableList<Videojuego>) {
         try {
+            if (!Files.isReadable(ruta)) {
+                Files.createFile(ruta)
+                println("Videojuegos.csv creado por primera vez en: $ruta")
+            }
             val fichero: File = ruta.toFile()
             csvWriter {
                 delimiter = ';'
@@ -57,6 +61,7 @@ class VideojuegoRepository {
                 fichero
             )
             println("--- Información guardada con éxito en: $fichero")
+
         } catch (e: Exception) {
             println("Error al escribir el fichero CSV: ${e.message}")
         }

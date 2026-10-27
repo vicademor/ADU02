@@ -25,15 +25,15 @@ fun gestionJSON() {
     val salidaJSON = Path.of("datos/datos_ini", "videojuegos.json")
     val datos = leerDatosJSON(entradaJSON)
     println("--- Información de la lista de objetos Videojuegos JSON ---")
-    for (videojuego in datos){
+    for (videojuego in datos) {
         println(" - ID: ${videojuego.id} | Título: ${videojuego.titulo} | Genero: ${videojuego.genero} | Año de salida: ${videojuego.anio} | Nota: ${videojuego.nota}")
     }
     escribirDatosJSON(salidaJSON, datos)
     val datoscsv: MutableList<Videojuego> = control.recibirDatos() as MutableList<Videojuego>
     val datosjson = jsonToCsv(datos)
     var contador = 0
-    datosjson.forEach{
-        if(datoscsv.none { juego -> juego.id == it.id }){
+    datosjson.forEach {
+        if (datoscsv.none { juego -> juego.id == it.id }) {
             contador++
             datoscsv.add(it)
         }
@@ -82,10 +82,15 @@ fun leerDatosJSON(ruta: Path): List<VideojuegoJSON> {
 
 fun escribirDatosJSON(ruta: Path, videojuegos: List<VideojuegoJSON>) {
     try {
+        if (!Files.exists(ruta)) {
+            Files.createFile(ruta)
+            println("Videojuegos.json creado por primera vez en: $ruta")
+        }
         val jsonConfigurador = Json { prettyPrint = true }
         val jsonString = jsonConfigurador.encodeToString(videojuegos)
         Files.writeString(ruta, jsonString)
         println("--- Información guardada en: $ruta")
+
     } catch (e: Throwable) {
         println("Error al guardar JSON: ${e.message}")
     }

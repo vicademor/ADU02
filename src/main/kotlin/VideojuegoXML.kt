@@ -8,37 +8,37 @@ import java.nio.file.Files
 import java.nio.file.Path
 import kotlin.collections.emptyList
 
-data class VideojuegoXML (
-    @JacksonXmlProperty (localName = "id")
+data class VideojuegoXML(
+    @JacksonXmlProperty(localName = "id")
     val id: Int,
-    @JacksonXmlProperty (localName = "titulo")
+    @JacksonXmlProperty(localName = "titulo")
     val titulo: String,
-    @JacksonXmlProperty (localName = "genero")
+    @JacksonXmlProperty(localName = "genero")
     val genero: String,
-    @JacksonXmlProperty (localName = "anio")
+    @JacksonXmlProperty(localName = "anio")
     val anio: Int,
-    @JacksonXmlProperty (localName = "nota")
+    @JacksonXmlProperty(localName = "nota")
     val nota: Double
 )
 
 @JacksonXmlRootElement(localName = "videojuegos")
-data class VideojuegosWrapper (
+data class VideojuegosWrapper(
     @JacksonXmlElementWrapper(useWrapping = false)
     @JacksonXmlProperty(localName = "videojuego")
     val videojuegos: List<VideojuegoXML> = emptyList()
 )
 
-fun main(){
+fun main() {
     gestionXML()
 }
 
-fun gestionXML(){
+fun gestionXML() {
     val entradaXML = Path.of("datos/datos_ini", "videojuegos.xml")
     val salidaXML = Path.of("datos/datos_ini", "videojuegos.xml")
     val control = VideojuegoService()
     val datos = leerDatosXML(entradaXML)
     println("--- Información de la lista de objetos Videojuegos XML ---")
-    for (videojuego in datos){
+    for (videojuego in datos) {
         println(" - ID: ${videojuego.id} | Título: ${videojuego.titulo} | Genero: ${videojuego.genero} | Año de salida: ${videojuego.anio} | Nota: ${videojuego.nota}")
     }
 
@@ -74,8 +74,8 @@ fun xmlToCsv(videojuegosXML: List<VideojuegoXML>): List<Videojuego> {
     }
 }
 
-fun csvToXML(videojuegos: List<Videojuego>): List<VideojuegoXML>{
-    return videojuegos.map{
+fun csvToXML(videojuegos: List<Videojuego>): List<VideojuegoXML> {
+    return videojuegos.map {
         VideojuegoXML(
             id = it.id,
             titulo = it.titulo,
@@ -86,12 +86,12 @@ fun csvToXML(videojuegos: List<Videojuego>): List<VideojuegoXML>{
     }
 }
 
-fun leerDatosXML(ruta: Path) : List<VideojuegoXML>{
+fun leerDatosXML(ruta: Path): List<VideojuegoXML> {
     var contenedor = VideojuegosWrapper(emptyList())
 
-    if(!Files.isReadable(ruta)){
+    if (!Files.isReadable(ruta)) {
         println("Error: No se puede leer el fichero en la ruta: $ruta")
-    }else{
+    } else {
         val fichero = ruta.toFile()
         val xmlMapper = XmlMapper().registerKotlinModule()
 
@@ -101,8 +101,12 @@ fun leerDatosXML(ruta: Path) : List<VideojuegoXML>{
     return contenedor.videojuegos
 }
 
-fun escribirDatosXML(ruta: Path, videojuegos: List<VideojuegoXML>){
+fun escribirDatosXML(ruta: Path, videojuegos: List<VideojuegoXML>) {
     try {
+        if (!Files.exists(ruta)) {
+            Files.createFile(ruta)
+            println("Videojuegos.xml creado por primera vez en la ruta: $ruta")
+        }
         val fichero = ruta.toFile()
         val contenedor = VideojuegosWrapper(videojuegos)
         val xmlMapper = XmlMapper().registerKotlinModule()
